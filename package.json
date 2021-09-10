@@ -8,7 +8,8 @@
   "author": "Justin Rockwood",
   "license": "MIT",
   "scripts": {
-    "build": "yarn install && yarn run compile && yarn run test",
+    "build": "yarn install && yarn run clean && yarn run compile && yarn run test",
+    "clean": "rimraf lib",
     "compile": "tsc --project .",
     "compile-watch": "tsc --project . --watch",
     "test": "jasmine --config=jasmine.json",
@@ -27,6 +28,7 @@
     "jasmine-expect": "5.0.0",
     "nodemon": "2.0.12",
     "prettier": "2.3.2",
+    "rimraf": "3.0.2",
     "typescript": "4.4.2"
   },
   "dependencies": {
