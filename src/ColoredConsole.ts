@@ -16,19 +16,30 @@ export const defaultLogTypePrefixes: ReadonlyMap<LogType, string> = new Map<LogT
 ]);
 
 /**
+ * Initialization options when creating a {@link ColoredConsole}.
+ */
+export interface ColoredConsoleOptions {
+  /**
+   * Determines whether the defined prefixes should be used when logging messages.
+   */
+  suppressPrefixes?: boolean;
+}
+
+const defaultOptions: ColoredConsoleOptions = {
+  suppressPrefixes: false,
+};
+
+/**
  * Represents a console that is capable of printing in color. This generally has the same method
  * names as the built-in `console` object in Node or the browser. However, it is not meant as a
  * complete replacement. Its strength comes into play by allowing it to be injected into classes or
  * functions and then allowing unit tests to inspect what was written to the console.
  */
 export abstract class ColoredConsole {
-  /**
-   * Determines whether the defined prefixes should be used when logging messages.
-   */
-  public usePrefixes: boolean;
+  public options: ColoredConsoleOptions;
 
-  protected constructor(usePrefixes: boolean) {
-    this.usePrefixes = usePrefixes;
+  protected constructor(options?: ColoredConsoleOptions) {
+    this.options = Object.assign({}, defaultOptions, options);
   }
 
   /**
@@ -102,7 +113,7 @@ export abstract class ColoredConsole {
    * @param message The message to prefix.
    */
   protected prefixMessage(type: LogType, message: string = ''): string {
-    if (this.usePrefixes && message.length > 0) {
+    if (!this.options.suppressPrefixes && message.length > 0) {
       const prefix = this.prefixes.get(type) || '';
       message = prefix + message;
     }
