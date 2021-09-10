@@ -1,19 +1,4 @@
 /**
- * Represents the colors used for the foreground text in the console.
+ * Represents the colors used for the foreground text color or background color in the console.
  */
-export type ForegroundColor =
-  | 'black'
-  | 'blue'
-  | 'cyan'
-  | 'gray'
-  | 'green'
-  | 'inherit'
-  | 'magenta'
-  | 'red'
-  | 'white'
-  | 'yellow';
-
-/**
- * Represents the colors used for the background text in the console.
- */
-export type BackgroundColor = 'black' | 'blue' | 'cyan' | 'green' | 'inherit' | 'magenta' | 'red' | 'white' | 'yellow';
+export type Color = 'inherit' | 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white' | 'gray';

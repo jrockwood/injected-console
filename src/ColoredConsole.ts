@@ -1,4 +1,4 @@
-import { BackgroundColor, ForegroundColor } from './ConsoleColors';
+import { Color } from './ConsoleColors';
 
 export type LogType = 'assert' | 'error' | 'info' | 'log' | 'warn' | 'success';
 
@@ -46,12 +46,7 @@ export abstract class ColoredConsole {
    * @param foreColor An optional foreground color to use. Defaults to 'red'.
    * @param backColor An optional background color to use. Defaults to 'inherit'.
    */
-  public abstract assert(
-    value: boolean,
-    message?: string,
-    foreColor?: ForegroundColor,
-    backColor?: BackgroundColor,
-  ): void;
+  public abstract assert(value: boolean, message?: string, foreColor?: Color, backColor?: Color): void;
 
   /**
    * Prints a message to the console `error` stream. Note that this simplifies the normal
@@ -61,7 +56,7 @@ export abstract class ColoredConsole {
    * @param foreColor An optional foreground color to use. Defaults to 'red'.
    * @param backColor An optional background color to use. Defaults to 'inherit'.
    */
-  public abstract error(message?: string, foreColor?: ForegroundColor, backColor?: BackgroundColor): void;
+  public abstract error(message?: string, foreColor?: Color, backColor?: Color): void;
 
   /**
    * Prints a message to the console `info` stream. Note that this simplifies the normal
@@ -71,7 +66,7 @@ export abstract class ColoredConsole {
    * @param foreColor An optional foreground color to use. Defaults to 'inherit'.
    * @param backColor An optional background color to use. Defaults to 'inherit'.
    */
-  public abstract info(message?: string, foreColor?: ForegroundColor, backColor?: BackgroundColor): void;
+  public abstract info(message?: string, foreColor?: Color, backColor?: Color): void;
 
   /**
    * Prints a message to the console `log` stream. Note that this simplifies the normal `console.log`
@@ -80,7 +75,7 @@ export abstract class ColoredConsole {
    * @param foreColor An optional foreground color to use. Defaults to 'inherit'.
    * @param backColor An optional background color to use. Defaults to 'inherit'.
    */
-  public abstract log(message?: string, foreColor?: ForegroundColor, backColor?: BackgroundColor): void;
+  public abstract log(message?: string, foreColor?: Color, backColor?: Color): void;
 
   /**
    * Prints a message to the console `warn` stream. Note that this simplifies the normal
@@ -90,7 +85,7 @@ export abstract class ColoredConsole {
    * @param foreColor An optional foreground color to use. Defaults to 'yellow'.
    * @param backColor An optional background color to use. Defaults to 'inherit'.
    */
-  public abstract warn(message?: string, foreColor?: ForegroundColor, backColor?: BackgroundColor): void;
+  public abstract warn(message?: string, foreColor?: Color, backColor?: Color): void;
 
   /**
    * Prints a success message to the console in green using the 'info' stream.
@@ -98,7 +93,7 @@ export abstract class ColoredConsole {
    * @param foreColor An optional foreground color to use. Defaults to 'green'.
    * @param backColor An optional background color to use. Defaults to 'inherit'.
    */
-  public abstract success(message?: string, foreColor?: ForegroundColor, backColor?: BackgroundColor): void;
+  public abstract success(message?: string, foreColor?: Color, backColor?: Color): void;
 
   /**
    * Prefixes the message if necessary by looking up the prefix defined for the log type. If message
