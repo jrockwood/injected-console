@@ -2,7 +2,7 @@
 
 > Enables unit tests to easily mock the console.
 
-![injected-console icon](docs/images/injected-console-256.png)
+![injected-console icon](./docs/images/injected-console-256.png)
 
 ## Overview
 
@@ -35,8 +35,8 @@ Add a reference to your `package.json` file using `npm` or `yarn`.
 yarn add @jrockwood/injected-console
 ```
 
-Note that if you're using TypeScript, the type definitions are already include in this library and
-don't need to be added via yarn.
+Note that if you're using TypeScript, the type definitions are already included in this library and
+don't need to be added via npm/yarn.
 
 ## Examples
 
@@ -45,7 +45,7 @@ don't need to be added via yarn.
 The following code shows an example of how to use the `ColoredConsole` interface inside of
 application code as an injected dependency.
 
-`code.ts`
+#### `code.ts`
 
 ```ts
 import { ColoredConsole, OsColoredConsole } from '@jrockwood/injected-console';
@@ -62,29 +62,23 @@ export function printSomething(coloredConsole: ColoredConsole = new OsColoredCon
 Below is an example of how to construct a `VirtualColoredConsole` inside of a unit test so that
 nothing is actually printed to the console.
 
-`code.test.ts`
+#### `code.test.ts`
 
 ```ts
 import { VirtualColoredConsole } from '@jrockwood/injected-console';
 import { printSomething } from './code';
 
 describe('printSomething', () => {
-  it('should write a single line', () => {
+  it('should have logged something', () => {
     const virtualConsole = new VirtualColoredConsole();
     printSomething(virtualConsole);
-    expect(virtualConsole).toHaveSingleLine();
+    expect(virtualConsole).toHaveJustLogged();
   });
 
   it('should write something specific', () => {
     const virtualConsole = new VirtualColoredConsole();
     printSomething(virtualConsole);
-    expect(virtualConsole).toHaveLine('Some message');
-  });
-
-  it('should write in magenta', () => {
-    const virtualConsole = new VirtualColoredConsole();
-    printSomething(virtualConsole);
-    expect(virtualConsole).toHaveMagentaLine(/Some message/);
+    expect(virtualConsole).toHaveJustLogged('Some message');
   });
 
   it('should verify all properties of all lines in oreder', () => {
@@ -140,7 +134,3 @@ expect(coloredConsole).toHaveJustLoggedInfo(string? | RegExp?, ignoreColors?: bo
 // Checking existence of messages (unordered)
 expect(coloredConsole).toHaveLine(string? | RegExp?);
 ```
-
-## API
-
-See the [API documentation](docs/api.md) for more details.
