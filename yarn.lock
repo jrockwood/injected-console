@@ -92,13 +92,6 @@
   dependencies:
     "@types/node" "*"
 
-"@types/jasmine-expect@3.8.1":
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/@types/jasmine-expect/-/jasmine-expect-3.8.1.tgz#80e3b345831ca2217873030e920f599e45881ca1"
-  integrity sha512-th6GNWDqK4lFWDsJrG8KVBRNdZ9GNHFqFUAtFal110OB0ET0v+tJwJ/xHV0i4xRXmohtpcXd3X0whovgbQVteg==
-  dependencies:
-    jasmine-expect "*"
-
 "@types/jasmine@3.9.0":
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.9.0.tgz#0118a74c447a580035406521c2600b22f28db4d4"
@@ -1022,7 +1015,7 @@ jasmine-core@~3.9.0:
   resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-3.9.0.tgz#09a3c8169fe98ec69440476d04a0e4cb4d59e452"
   integrity sha512-Tv3kVbPCGVrjsnHBZ38NsPU3sDOtNa0XmbG2baiyJqdb5/SPpDO6GVwJYtUryl6KB4q1Ssckwg612ES9Z0dreQ==
 
-jasmine-expect@*, jasmine-expect@5.0.0:
+jasmine-expect@5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/jasmine-expect/-/jasmine-expect-5.0.0.tgz#6ca173b17795f58a71a929f29712426e086a14c5"
   integrity sha512-byn1zq0EQBA9UKs5A+H6gk5TRcanV+TqQMRxrjurGuqKkclaqgjw/vV6aT/jtf5tabXGonTH6VDZJ33Z1pxSxw==
