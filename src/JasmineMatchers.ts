@@ -4,8 +4,51 @@ import { ColoredLine, VirtualColoredConsole } from './VirtualColoredConsole';
 
 /**
  * If you add a matcher to this file, make sure to add the definition to the
- * jasmine-matchers-types.d.ts file also.
+ * JasmineMatchersTypes.d.ts file also.
  */
+
+export declare function expect(coloredConsole: VirtualColoredConsole): jasmine.Matchers<VirtualColoredConsole>;
+
+declare global {
+  namespace jasmine {
+    interface Matchers<T extends VirtualColoredConsole> {
+      /**
+       * Verifies that the message matches, 'log' was used, and the fore and back colors are 'inherit'.
+       */
+      toHaveJustLogged(expectedMessage?: string | RegExp, ignoreColors?: boolean): boolean;
+
+      /**
+       * Verifies that the message matches, 'success' was used, the fore color is 'green', and the
+       * back color is 'inherit'.
+       */
+      toHaveJustLoggedSuccess(expectedMessage?: string | RegExp, ignoreColors?: boolean): boolean;
+
+      /**
+       * Verifies that the last message matches, 'error' was used, the fore color is 'red', and the
+       * back color is 'inherit'.
+       */
+      toHaveJustLoggedError(expectedMessage?: string | RegExp, ignoreColors?: boolean): boolean;
+
+      /**
+       * Verifies that the last message matches, 'warn' was used, the fore color is 'yellow', and the
+       * back color is 'inherit'.
+       */
+      toHaveJustLoggedWarning(expectedMessage?: string | RegExp, ignoreColors?: boolean): boolean;
+
+      /**
+       * Verifies that the last message matches, 'info' was used, the fore color is 'inherit', and the
+       * back color is 'inherit'.
+       */
+      toHaveJustLoggedInfo(expectedMessage?: string | RegExp, ignoreColors?: boolean): boolean;
+
+      /**
+       * Verifies that there is a line that has the specified message, or if the message is not
+       * specified that there exists at least one line.
+       */
+      toHaveLine(expectedMessage?: string | RegExp): boolean;
+    }
+  }
+}
 
 // Don't invoke beforeEach if we're not running inside of a Jasmine environment.
 if (typeof global.beforeEach === 'function') {
