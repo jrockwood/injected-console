@@ -51,7 +51,7 @@ declare global {
 }
 
 // Don't invoke beforeEach if we're not running inside of a Jasmine environment.
-if (typeof global.beforeEach === 'function') {
+if (jasmine !== undefined && typeof global.beforeEach === 'function') {
   beforeEach(() => {
     jasmine.addMatchers({
       toHaveJustLogged: toHaveJustLoggedFactory,

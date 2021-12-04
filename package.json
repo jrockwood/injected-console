@@ -1,6 +1,6 @@
 {
   "name": "@jrockwood/injected-console",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Enables unit tests to easily mock and inspect console output",
   "main": "./lib/src/index.js",
   "types": "./lib/src/index.d.ts",
