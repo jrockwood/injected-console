@@ -1,6 +1,6 @@
 {
   "name": "@jrockwood/injected-console-matchers",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Custom Jasmine matchers for the @jrockwood/injected-console library",
   "main": "./lib/src/index.js",
   "types": "./lib/src/index.d.ts",
@@ -16,7 +16,7 @@
     "test-watch": "nodemon --ext js --exec \"jasmine --config=jasmine.json\""
   },
   "devDependencies": {
-    "@jrockwood/injected-console": "2.0.0",
+    "@jrockwood/injected-console": "2.0.1",
     "jasmine": "3.10.0",
     "jasmine-expect": "5.0.0"
   },
