@@ -1,4 +1,11 @@
 {
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": false
+    }
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
     "source.organizeImports": true
@@ -9,6 +16,7 @@
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": true,
+  "eslint.alwaysShowStatus": true,
   "files.eol": "\n",
   "files.exclude": {
     "**/.DS_Store": true,
@@ -19,7 +27,7 @@
   "rewrap.doubleSentenceSpacing": false,
   "rewrap.reformat": false,
   "rewrap.wholeComment": true,
-  "rewrap.wrappingColumn": 100,
+  "rewrap.wrappingColumn": 120,
   "search.exclude": {
     "**/.pnp.*": true,
     "**/.yarn": true,

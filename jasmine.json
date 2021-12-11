@@ -1,5 +1,3 @@
 {
-  "helpers": ["../node_modules/jasmine-expect/index.js"],
-  "spec_dir": "lib",
-  "spec_files": ["**/*.test.js"]
+  "spec_files": ["packages/**/test/**/*.test.js"]
 }
