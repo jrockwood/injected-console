@@ -1,0 +1,23 @@
+{
+  "name": "@jrockwood/injected-console",
+  "version": "1.0.4",
+  "description": "Enables unit tests to easily mock and inspect console output",
+  "main": "./lib/src/index.js",
+  "types": "./lib/src/index.d.ts",
+  "repository": "https://github.com/jrockwood/injected-console.git",
+  "author": "Justin Rockwood",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn install && yarn run clean && yarn run compile && yarn run test",
+    "clean": "rimraf lib",
+    "compile": "tsc --project .",
+    "compile-watch": "tsc --project . --watch",
+    "test": "jasmine --config=jasmine.json",
+    "test-watch": "nodemon --ext js --exec \"jasmine --config=jasmine.json\""
+  },
+  "devDependencies": {
+    "jasmine": "3.10.0",
+    "jasmine-expect": "5.0.0"
+  },
+  "dependencies": {}
+}

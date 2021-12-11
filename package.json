@@ -1,19 +1,27 @@
 {
-  "name": "@jrockwood/injected-console",
-  "version": "1.0.4",
-  "description": "Enables unit tests to easily mock and inspect console output",
-  "main": "./lib/src/index.js",
-  "types": "./lib/src/index.d.ts",
+  "name": "@jrockwood/injected-console-monorepo",
+  "version": "2.0.0",
+  "description": "Monorepo for the injected-console projects",
   "repository": "https://github.com/jrockwood/injected-console.git",
   "author": "Justin Rockwood",
   "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/jasmine",
+      "**/jasmine/**",
+      "**/jasmine-expect",
+      "**/jasmine-expect/**"
+    ]
+  },
   "scripts": {
     "build": "yarn install && yarn run clean && yarn run compile && yarn run test",
-    "clean": "rimraf lib",
-    "compile": "tsc --project .",
-    "compile-watch": "tsc --project . --watch",
-    "test": "jasmine --config=jasmine.json",
-    "test-watch": "nodemon --ext js --exec \"jasmine --config=jasmine.json\""
+    "clean": "yarn workspaces run clean",
+    "compile": "yarn workspaces run compile",
+    "test": "yarn workspaces run test"
   },
   "devDependencies": {
     "@types/fs-extra": "9.0.13",
@@ -23,8 +31,6 @@
     "@typescript-eslint/parser": "5.1.0",
     "eslint": "8.1.0",
     "eslint-config-prettier": "8.3.0",
-    "jasmine": "3.10.0",
-    "jasmine-expect": "5.0.0",
     "nodemon": "2.0.14",
     "prettier": "2.4.1",
     "rimraf": "3.0.2",
