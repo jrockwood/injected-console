@@ -1,7 +1,7 @@
 {
-  "name": "@jrockwood/injected-console",
+  "name": "@jrockwood/injected-console-matchers",
   "version": "2.0.0",
-  "description": "Enables unit tests to easily mock and inspect console output",
+  "description": "Custom Jasmine matchers for the @jrockwood/injected-console library",
   "main": "./lib/src/index.js",
   "types": "./lib/src/index.d.ts",
   "repository": "https://github.com/jrockwood/injected-console.git",
@@ -16,8 +16,12 @@
     "test-watch": "nodemon --ext js --exec \"jasmine --config=jasmine.json\""
   },
   "devDependencies": {
+    "@jrockwood/injected-console": "2.0.0",
     "jasmine": "3.10.0",
     "jasmine-expect": "5.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "peerDependencies": {
+    "@jrockwood/injected-console": "^2.0.0"
+  }
 }

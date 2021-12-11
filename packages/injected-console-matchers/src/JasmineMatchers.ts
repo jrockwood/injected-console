@@ -1,6 +1,4 @@
-import { LogType } from './ColoredConsole';
-import { Color } from './ConsoleColors';
-import { ColoredLine, VirtualColoredConsole } from './VirtualColoredConsole';
+import { Color, ColoredLine, LogType, VirtualColoredConsole } from '@jrockwood/injected-console';
 
 export declare function expect(coloredConsole: VirtualColoredConsole): jasmine.Matchers<VirtualColoredConsole>;
 

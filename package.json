@@ -19,8 +19,9 @@
   },
   "scripts": {
     "build": "yarn install && yarn run clean && yarn run compile && yarn run test",
-    "clean": "yarn workspaces run clean",
-    "compile": "yarn workspaces run compile",
+    "clean": "tsc --build --clean && yarn workspaces run clean",
+    "compile": "tsc --build",
+    "compile-watch": "tsc --build --watch",
     "test": "yarn workspaces run test"
   },
   "devDependencies": {

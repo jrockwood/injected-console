@@ -1,5 +1,4 @@
-import { LogType } from '../src/ColoredConsole';
-import { Color } from '../src/ConsoleColors';
+import { Color, LogType, VirtualColoredConsole } from '@jrockwood/injected-console';
 import {
   toHaveJustLoggedErrorFactory,
   toHaveJustLoggedFactory,
@@ -8,7 +7,6 @@ import {
   toHaveJustLoggedWarningFactory,
   toHaveLineFactory,
 } from '../src/JasmineMatchers';
-import { VirtualColoredConsole } from '../src/VirtualColoredConsole';
 
 const logFunc = (virtualConsole: VirtualColoredConsole, message: string, foreColor?: Color, backColor?: Color) =>
   virtualConsole.log(message, foreColor, backColor);
