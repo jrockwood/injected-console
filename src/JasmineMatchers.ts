@@ -2,11 +2,6 @@ import { LogType } from './ColoredConsole';
 import { Color } from './ConsoleColors';
 import { ColoredLine, VirtualColoredConsole } from './VirtualColoredConsole';
 
-/**
- * If you add a matcher to this file, make sure to add the definition to the
- * JasmineMatchersTypes.d.ts file also.
- */
-
 export declare function expect(coloredConsole: VirtualColoredConsole): jasmine.Matchers<VirtualColoredConsole>;
 
 declare global {
@@ -51,7 +46,7 @@ declare global {
 }
 
 // Don't invoke beforeEach if we're not running inside of a Jasmine environment.
-if (jasmine !== undefined && typeof global.beforeEach === 'function') {
+if (typeof jasmine === 'object' && typeof global.beforeEach === 'function') {
   beforeEach(() => {
     jasmine.addMatchers({
       toHaveJustLogged: toHaveJustLoggedFactory,
